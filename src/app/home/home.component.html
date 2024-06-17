@@ -1,6 +1,33 @@
 ﻿<div class="p-4">
-    <div class="container">
-        <h1>Hi {{account?.firstName}}!</h1>
-        <p>You're logged in with Angular 15 & JWT!!</p>
+  <div class="container">
+    <h1>Hi {{ account?.name }}!</h1>
+    <p>You're logged in!!</p>
+    <p>Your Card is: {{ cardDetails.cardNumber.split("_")[1] }}</p>
+    <p>Your Card created on: {{ cardDetails.cardNumber.split("_")[0] }}</p>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center container text-white mt-5">
+  <div class="card p-2 px-3 py-3">
+    <div class="d-flex justify-content-between align-items-center">
+      <img src="https://i.imgur.com/8ANWXql.png" width="20" height="20" />
     </div>
+    <div class="mt-3">
+      <span class="mr-3">{{ cardDetails.cardNumber.split("_")[1] }}</span>
+    </div>
+    <div class="d-flex justify-content-between card-details mt-3 mb-3">
+      <div class="d-flex flex-column">
+        <span class="light">Card Holder</span><span>{{ account?.name }}</span>
+      </div>
+      <div class="d-flex flex-row">
+        <div class="d-flex flex-column mr-3">
+          <span class="light">Created</span
+          ><span>{{ cardDetails.cardNumber.split("_")[0] }}</span>
+        </div>
+        <!-- <div class="d-flex flex-column">
+          <span class="light">CVV</span><span>857</span>
+        </div> -->
+      </div>
+    </div>
+  </div>
 </div>

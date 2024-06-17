@@ -3,6 +3,7 @@
 export class Account {
   id?: string;
   title?: string;
+  name?: string;
   firstName?: string;
   lastName?: string;
   email?: string;

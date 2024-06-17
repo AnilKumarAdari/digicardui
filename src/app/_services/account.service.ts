@@ -21,18 +21,20 @@ export class AccountService {
     this.tokenSubject = new BehaviorSubject<any | null>(null);
     this.account = this.accountSubject.asObservable();
     this.tokens = this.tokenSubject.asObservable();
+    if (localStorage.getItem('user')) {
+      this.accountSubject.next(JSON.parse(localStorage.getItem('user')!));
+    }
+    if (localStorage.getItem('tokens')) {
+      this.tokenSubject.next(JSON.parse(localStorage.getItem('tokens')!));
+    }
   }
 
   public get accountValue() {
-    return (
-      this.accountSubject.value || JSON.parse(localStorage.getItem('user')!)
-    );
+    return this.accountSubject.value;
   }
 
   public get tokenValue() {
-    return (
-      this.tokenSubject.value || JSON.parse(localStorage.getItem('tokens')!)
-    );
+    return this.tokenSubject.value;
   }
 
   login(email: string, password: string) {
@@ -84,7 +86,7 @@ export class AccountService {
       );
   }
 
-  register(account: Account) {
+  register(account: any) {
     return this.http.post(`${baseUrl}/register`, account);
   }
 
