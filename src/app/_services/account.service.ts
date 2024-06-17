@@ -66,6 +66,8 @@ export class AccountService {
       .subscribe();
     this.stopRefreshTokenTimer();
     this.accountSubject.next(null);
+    this.tokenSubject.next(null);
+    localStorage.clear();
     this.router.navigate(['/account/login']);
   }
 

@@ -5,10 +5,12 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #1b6e37;
+  background: url("./../../assets/logo.png") no-repeat;
+  background-size: cover;
   background-clip: border-box;
   border: 1px solid #1b6e37;
   border-radius: 7px;
+  height: 224px;
 }
 
 .light {
