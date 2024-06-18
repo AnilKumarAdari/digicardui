@@ -5,7 +5,7 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background: url("./../../assets/logo.png") no-repeat;
+  background: url("https://digicardui.vercel.app/assets/logo.png") no-repeat;
   background-size: cover;
   background-clip: border-box;
   border: 1px solid #1b6e37;
